@@ -1,0 +1,458 @@
+
+GccApplication1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000036  00800100  00000226  0000029a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000226  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000002d0  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000300  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000058  00000000  00000000  00000340  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a60  00000000  00000000  00000398  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000788  00000000  00000000  00000df8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000042f  00000000  00000000  00001580  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000b4  00000000  00000000  000019b0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000431  00000000  00000000  00001a64  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000285  00000000  00000000  00001e95  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000048  00000000  00000000  0000211a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	33 c0       	rjmp	.+102    	; 0x68 <__ctors_end>
+   2:	00 00       	nop
+   4:	44 c0       	rjmp	.+136    	; 0x8e <__bad_interrupt>
+   6:	00 00       	nop
+   8:	42 c0       	rjmp	.+132    	; 0x8e <__bad_interrupt>
+   a:	00 00       	nop
+   c:	40 c0       	rjmp	.+128    	; 0x8e <__bad_interrupt>
+   e:	00 00       	nop
+  10:	3e c0       	rjmp	.+124    	; 0x8e <__bad_interrupt>
+  12:	00 00       	nop
+  14:	3c c0       	rjmp	.+120    	; 0x8e <__bad_interrupt>
+  16:	00 00       	nop
+  18:	3a c0       	rjmp	.+116    	; 0x8e <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	38 c0       	rjmp	.+112    	; 0x8e <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	36 c0       	rjmp	.+108    	; 0x8e <__bad_interrupt>
+  22:	00 00       	nop
+  24:	34 c0       	rjmp	.+104    	; 0x8e <__bad_interrupt>
+  26:	00 00       	nop
+  28:	32 c0       	rjmp	.+100    	; 0x8e <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	30 c0       	rjmp	.+96     	; 0x8e <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	2e c0       	rjmp	.+92     	; 0x8e <__bad_interrupt>
+  32:	00 00       	nop
+  34:	2c c0       	rjmp	.+88     	; 0x8e <__bad_interrupt>
+  36:	00 00       	nop
+  38:	2a c0       	rjmp	.+84     	; 0x8e <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	28 c0       	rjmp	.+80     	; 0x8e <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	26 c0       	rjmp	.+76     	; 0x8e <__bad_interrupt>
+  42:	00 00       	nop
+  44:	24 c0       	rjmp	.+72     	; 0x8e <__bad_interrupt>
+  46:	00 00       	nop
+  48:	22 c0       	rjmp	.+68     	; 0x8e <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	20 c0       	rjmp	.+64     	; 0x8e <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	1e c0       	rjmp	.+60     	; 0x8e <__bad_interrupt>
+  52:	00 00       	nop
+  54:	1c c0       	rjmp	.+56     	; 0x8e <__bad_interrupt>
+  56:	00 00       	nop
+  58:	1a c0       	rjmp	.+52     	; 0x8e <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	18 c0       	rjmp	.+48     	; 0x8e <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	16 c0       	rjmp	.+44     	; 0x8e <__bad_interrupt>
+  62:	00 00       	nop
+  64:	14 c0       	rjmp	.+40     	; 0x8e <__bad_interrupt>
+	...
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 e2       	ldi	r30, 0x26	; 38
+  7c:	f2 e0       	ldi	r31, 0x02	; 2
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a6 33       	cpi	r26, 0x36	; 54
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+  8a:	aa d0       	rcall	.+340    	; 0x1e0 <main>
+  8c:	ca c0       	rjmp	.+404    	; 0x222 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	b8 cf       	rjmp	.-144    	; 0x0 <__vectors>
+
+00000090 <setDataDirection>:
+}
+
+
+void setDataDirection(void)
+{
+	DDRB |=0B00110011;//setting pin as the output pin
+  90:	84 b1       	in	r24, 0x04	; 4
+  92:	83 63       	ori	r24, 0x33	; 51
+  94:	84 b9       	out	0x04, r24	; 4
+	DDRC &=0B11111110;//setting the pco as the input
+  96:	87 b1       	in	r24, 0x07	; 7
+  98:	8e 7f       	andi	r24, 0xFE	; 254
+  9a:	87 b9       	out	0x07, r24	; 7
+	DDRD |=0B00101000;//setting the pd3 as the output
+  9c:	8a b1       	in	r24, 0x0a	; 10
+  9e:	88 62       	ori	r24, 0x28	; 40
+  a0:	8a b9       	out	0x0a, r24	; 10
+	DDRD &=0B11001011;//setting the pd2 and pd3 as the input
+  a2:	8a b1       	in	r24, 0x0a	; 10
+  a4:	8b 7c       	andi	r24, 0xCB	; 203
+  a6:	8a b9       	out	0x0a, r24	; 10
+  a8:	08 95       	ret
+
+000000aa <ADC_Init>:
+}
+void ADC_Init()
+{
+    DDRC=0x0;               /* Make ADC port as input */
+  aa:	17 b8       	out	0x07, r1	; 7
+    ADCSRA = 0x87;          /* Enable ADC, fr/128  */
+  ac:	87 e8       	ldi	r24, 0x87	; 135
+  ae:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+    ADMUX = 0x40;           /* Vref: Avcc, ADC channel: 0 */
+  b2:	80 e4       	ldi	r24, 0x40	; 64
+  b4:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7f807c>
+  b8:	08 95       	ret
+
+000000ba <ADC_Read>:
+int ADC_Read(char channel)
+{
+
+     int Ain,AinLow;
+
+     ADMUX=ADMUX|(channel & 0x0f);  /* Set input channel to read */
+  ba:	ec e7       	ldi	r30, 0x7C	; 124
+  bc:	f0 e0       	ldi	r31, 0x00	; 0
+  be:	90 81       	ld	r25, Z
+  c0:	8f 70       	andi	r24, 0x0F	; 15
+  c2:	98 2b       	or	r25, r24
+  c4:	90 83       	st	Z, r25
+     ADCSRA |= (1<<ADSC);           /* Start conversion */
+  c6:	ea e7       	ldi	r30, 0x7A	; 122
+  c8:	f0 e0       	ldi	r31, 0x00	; 0
+  ca:	80 81       	ld	r24, Z
+  cc:	80 64       	ori	r24, 0x40	; 64
+  ce:	80 83       	st	Z, r24
+     while((ADCSRA&(1<<ADIF))==0);  /* Monitor end of conversion interrupt */
+  d0:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+  d4:	84 ff       	sbrs	r24, 4
+  d6:	fc cf       	rjmp	.-8      	; 0xd0 <ADC_Read+0x16>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  d8:	8f e3       	ldi	r24, 0x3F	; 63
+  da:	9c e9       	ldi	r25, 0x9C	; 156
+  dc:	01 97       	sbiw	r24, 0x01	; 1
+  de:	f1 f7       	brne	.-4      	; 0xdc <ADC_Read+0x22>
+  e0:	00 c0       	rjmp	.+0      	; 0xe2 <ADC_Read+0x28>
+  e2:	00 00       	nop
+
+     _delay_ms(10);
+     AinLow = (int)ADCL;                /* Read lower byte*/
+  e4:	20 91 78 00 	lds	r18, 0x0078	; 0x800078 <__TEXT_REGION_LENGTH__+0x7f8078>
+    Ain = (int)ADCH*256;           /* Read higher 2 bits and 
+  e8:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+  ec:	90 e0       	ldi	r25, 0x00	; 0
+  ee:	98 2f       	mov	r25, r24
+  f0:	88 27       	eor	r24, r24
+                                //    Multiply with weight */
+    Ain = Ain + AinLow;             
+    return(Ain);                    /* Return digital value*/
+
+}
+  f2:	82 0f       	add	r24, r18
+  f4:	91 1d       	adc	r25, r1
+  f6:	08 95       	ret
+
+000000f8 <USART_Transmit>:
+	USART_Transmit(10);
+}
+
+void USART_Transmit(char data )
+{
+	while(!(UCSR0A & (1<<UDRE0)));
+  f8:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+  fc:	95 ff       	sbrs	r25, 5
+  fe:	fc cf       	rjmp	.-8      	; 0xf8 <USART_Transmit>
+	UDR0  = data;
+ 100:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 104:	08 95       	ret
+
+00000106 <senddata>:
+}
+
+void senddata(char string[])
+{
+ 106:	ef 92       	push	r14
+ 108:	ff 92       	push	r15
+ 10a:	0f 93       	push	r16
+ 10c:	1f 93       	push	r17
+ 10e:	cf 93       	push	r28
+ 110:	df 93       	push	r29
+ 112:	7c 01       	movw	r14, r24
+	int len,count;
+	len = strlen(string);
+ 114:	fc 01       	movw	r30, r24
+ 116:	01 90       	ld	r0, Z+
+ 118:	00 20       	and	r0, r0
+ 11a:	e9 f7       	brne	.-6      	; 0x116 <senddata+0x10>
+ 11c:	31 97       	sbiw	r30, 0x01	; 1
+ 11e:	8f 01       	movw	r16, r30
+ 120:	08 1b       	sub	r16, r24
+ 122:	19 0b       	sbc	r17, r25
+
+	for (count=0;count<len;count++)
+ 124:	c0 e0       	ldi	r28, 0x00	; 0
+ 126:	d0 e0       	ldi	r29, 0x00	; 0
+ 128:	06 c0       	rjmp	.+12     	; 0x136 <senddata+0x30>
+	{
+		USART_Transmit(string[count]);
+ 12a:	f7 01       	movw	r30, r14
+ 12c:	ec 0f       	add	r30, r28
+ 12e:	fd 1f       	adc	r31, r29
+ 130:	80 81       	ld	r24, Z
+ 132:	e2 df       	rcall	.-60     	; 0xf8 <USART_Transmit>
+void senddata(char string[])
+{
+	int len,count;
+	len = strlen(string);
+
+	for (count=0;count<len;count++)
+ 134:	21 96       	adiw	r28, 0x01	; 1
+ 136:	c0 17       	cp	r28, r16
+ 138:	d1 07       	cpc	r29, r17
+ 13a:	bc f3       	brlt	.-18     	; 0x12a <senddata+0x24>
+	{
+		USART_Transmit(string[count]);
+	}
+}
+ 13c:	df 91       	pop	r29
+ 13e:	cf 91       	pop	r28
+ 140:	1f 91       	pop	r17
+ 142:	0f 91       	pop	r16
+ 144:	ff 90       	pop	r15
+ 146:	ef 90       	pop	r14
+ 148:	08 95       	ret
+
+0000014a <sendSMS>:
+}
+
+void sendSMS()
+{
+	
+	senddata("AT");
+ 14a:	80 e0       	ldi	r24, 0x00	; 0
+ 14c:	91 e0       	ldi	r25, 0x01	; 1
+ 14e:	db df       	rcall	.-74     	; 0x106 <senddata>
+	USART_Transmit(13);
+ 150:	8d e0       	ldi	r24, 0x0D	; 13
+ 152:	d2 df       	rcall	.-92     	; 0xf8 <USART_Transmit>
+	USART_Transmit(10);
+ 154:	8a e0       	ldi	r24, 0x0A	; 10
+ 156:	d0 df       	rcall	.-96     	; 0xf8 <USART_Transmit>
+ 158:	2f ef       	ldi	r18, 0xFF	; 255
+ 15a:	83 ed       	ldi	r24, 0xD3	; 211
+ 15c:	90 e3       	ldi	r25, 0x30	; 48
+ 15e:	21 50       	subi	r18, 0x01	; 1
+ 160:	80 40       	sbci	r24, 0x00	; 0
+ 162:	90 40       	sbci	r25, 0x00	; 0
+ 164:	e1 f7       	brne	.-8      	; 0x15e <sendSMS+0x14>
+ 166:	00 c0       	rjmp	.+0      	; 0x168 <sendSMS+0x1e>
+ 168:	00 00       	nop
+	_delay_ms(1000);
+	
+	senddata("AT+CMGF=1");
+ 16a:	83 e0       	ldi	r24, 0x03	; 3
+ 16c:	91 e0       	ldi	r25, 0x01	; 1
+ 16e:	cb df       	rcall	.-106    	; 0x106 <senddata>
+	USART_Transmit(13);
+ 170:	8d e0       	ldi	r24, 0x0D	; 13
+ 172:	c2 df       	rcall	.-124    	; 0xf8 <USART_Transmit>
+ 174:	8a e0       	ldi	r24, 0x0A	; 10
+	USART_Transmit(10);
+ 176:	c0 df       	rcall	.-128    	; 0xf8 <USART_Transmit>
+ 178:	2f ef       	ldi	r18, 0xFF	; 255
+ 17a:	83 ed       	ldi	r24, 0xD3	; 211
+ 17c:	90 e3       	ldi	r25, 0x30	; 48
+ 17e:	21 50       	subi	r18, 0x01	; 1
+ 180:	80 40       	sbci	r24, 0x00	; 0
+ 182:	90 40       	sbci	r25, 0x00	; 0
+ 184:	e1 f7       	brne	.-8      	; 0x17e <sendSMS+0x34>
+ 186:	00 c0       	rjmp	.+0      	; 0x188 <sendSMS+0x3e>
+ 188:	00 00       	nop
+	_delay_ms(1000);
+	
+	senddata("AT+CMGW=");
+ 18a:	8d e0       	ldi	r24, 0x0D	; 13
+ 18c:	91 e0       	ldi	r25, 0x01	; 1
+ 18e:	bb df       	rcall	.-138    	; 0x106 <senddata>
+	USART_Transmit(34);
+ 190:	82 e2       	ldi	r24, 0x22	; 34
+ 192:	b2 df       	rcall	.-156    	; 0xf8 <USART_Transmit>
+	senddata("+94729690261");  //Enter Your Mobile number
+ 194:	86 e1       	ldi	r24, 0x16	; 22
+ 196:	91 e0       	ldi	r25, 0x01	; 1
+ 198:	b6 df       	rcall	.-148    	; 0x106 <senddata>
+	USART_Transmit(34);
+ 19a:	82 e2       	ldi	r24, 0x22	; 34
+ 19c:	ad df       	rcall	.-166    	; 0xf8 <USART_Transmit>
+ 19e:	8d e0       	ldi	r24, 0x0D	; 13
+	USART_Transmit(13);
+ 1a0:	ab df       	rcall	.-170    	; 0xf8 <USART_Transmit>
+ 1a2:	8a e0       	ldi	r24, 0x0A	; 10
+ 1a4:	a9 df       	rcall	.-174    	; 0xf8 <USART_Transmit>
+	USART_Transmit(10);
+ 1a6:	2f ef       	ldi	r18, 0xFF	; 255
+ 1a8:	83 ed       	ldi	r24, 0xD3	; 211
+ 1aa:	90 e3       	ldi	r25, 0x30	; 48
+ 1ac:	21 50       	subi	r18, 0x01	; 1
+ 1ae:	80 40       	sbci	r24, 0x00	; 0
+ 1b0:	90 40       	sbci	r25, 0x00	; 0
+ 1b2:	e1 f7       	brne	.-8      	; 0x1ac <sendSMS+0x62>
+ 1b4:	00 c0       	rjmp	.+0      	; 0x1b6 <sendSMS+0x6c>
+ 1b6:	00 00       	nop
+	_delay_ms(1000);
+	
+	senddata("There is a visitor");
+ 1b8:	83 e2       	ldi	r24, 0x23	; 35
+ 1ba:	91 e0       	ldi	r25, 0x01	; 1
+ 1bc:	a4 df       	rcall	.-184    	; 0x106 <senddata>
+ 1be:	8d e0       	ldi	r24, 0x0D	; 13
+	USART_Transmit(13);
+ 1c0:	9b df       	rcall	.-202    	; 0xf8 <USART_Transmit>
+ 1c2:	8a e0       	ldi	r24, 0x0A	; 10
+ 1c4:	99 cf       	rjmp	.-206    	; 0xf8 <USART_Transmit>
+	USART_Transmit(10);
+ 1c6:	08 95       	ret
+
+000001c8 <USART_Init>:
+ 1c8:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+ 1cc:	87 e6       	ldi	r24, 0x67	; 103
+
+void USART_Init()
+{
+	
+	UBRR0H =(unsigned char)(UBRR_VALUE>>8);
+	UBRR0L =(unsigned char)(UBRR_VALUE);
+ 1ce:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	UCSR0B =(1<<TXEN0);
+ 1d2:	88 e0       	ldi	r24, 0x08	; 8
+ 1d4:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	UCSR0C =(3<<UCSZ00);
+ 1d8:	86 e0       	ldi	r24, 0x06	; 6
+ 1da:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 1de:	08 95       	ret
+
+000001e0 <main>:
+void USART_Init();
+
+
+int main(void)
+{
+	setDataDirection();
+ 1e0:	57 df       	rcall	.-338    	; 0x90 <setDataDirection>
+	int in=0;
+	ADC_Init();
+ 1e2:	63 df       	rcall	.-314    	; 0xaa <ADC_Init>
+   
+	USART_Init();
+ 1e4:	f1 df       	rcall	.-30     	; 0x1c8 <USART_Init>
+	sendSMS();
+ 1e6:	b1 df       	rcall	.-158    	; 0x14a <sendSMS>
+ 1e8:	80 e0       	ldi	r24, 0x00	; 0
+    while (1) 
+    {
+		
+		in = ADC_Read(0);
+ 1ea:	67 df       	rcall	.-306    	; 0xba <ADC_Read>
+ 1ec:	8d 3b       	cpi	r24, 0xBD	; 189
+ 1ee:	22 e0       	ldi	r18, 0x02	; 2
+		
+		if (in >700){
+ 1f0:	92 07       	cpc	r25, r18
+ 1f2:	1c f0       	brlt	.+6      	; 0x1fa <main+0x1a>
+ 1f4:	85 b1       	in	r24, 0x05	; 5
+ 1f6:	85 b9       	out	0x05, r24	; 5
+			
+			PORTB |=0B00000000;
+ 1f8:	0a c0       	rjmp	.+20     	; 0x20e <main+0x2e>
+ 1fa:	89 35       	cpi	r24, 0x59	; 89
+ 1fc:	92 40       	sbci	r25, 0x02	; 2
+		}
+		else if(in >600) 
+ 1fe:	24 f0       	brlt	.+8      	; 0x208 <main+0x28>
+ 200:	85 b1       	in	r24, 0x05	; 5
+ 202:	80 61       	ori	r24, 0x10	; 16
+		{
+			PORTB |=0B00010000;
+ 204:	85 b9       	out	0x05, r24	; 5
+ 206:	03 c0       	rjmp	.+6      	; 0x20e <main+0x2e>
+ 208:	85 b1       	in	r24, 0x05	; 5
+ 20a:	80 63       	ori	r24, 0x30	; 48
+		}
+		else
+		{
+			PORTB |=0B00110000;
+ 20c:	85 b9       	out	0x05, r24	; 5
+ 20e:	49 99       	sbic	0x09, 1	; 9
+ 210:	04 c0       	rjmp	.+8      	; 0x21a <main+0x3a>
+		}
+		if ((PIND & 0B00000010)== 0)
+ 212:	8b b1       	in	r24, 0x0b	; 11
+ 214:	8f 7d       	andi	r24, 0xDF	; 223
+		{
+			PORTD &= 0B11011111;
+ 216:	8b b9       	out	0x0b, r24	; 11
+ 218:	e7 cf       	rjmp	.-50     	; 0x1e8 <main+0x8>
+ 21a:	8b b1       	in	r24, 0x0b	; 11
+ 21c:	80 62       	ori	r24, 0x20	; 32
+		}
+		else
+		{
+			
+			PORTD |= 0B00100000;
+ 21e:	8b b9       	out	0x0b, r24	; 11
+ 220:	e3 cf       	rjmp	.-58     	; 0x1e8 <main+0x8>
+
+00000222 <_exit>:
+ 222:	f8 94       	cli
+
+00000224 <__stop_program>:
+ 224:	ff cf       	rjmp	.-2      	; 0x224 <__stop_program>
